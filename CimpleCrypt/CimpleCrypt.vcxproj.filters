@@ -21,5 +21,8 @@
     <ClCompile Include="DES.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="binaryOps.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
