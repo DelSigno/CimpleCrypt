@@ -22,6 +22,7 @@ int getBitFromCharray(char **charray, int bit){
 
 }
 
+//New bit has to be one or zero
 void setBitToCharray(char **charray, int bit, int newBit){
 	
 	int bitShift = bit % 8;
@@ -29,11 +30,66 @@ void setBitToCharray(char **charray, int bit, int newBit){
 
 	switch (bitShift){
 		case 0:
-			*charray[targetChar] = ((*charray[targetChar] >> bitShift) & 0x01);
+			//if our target bit is 1
+			//if ((*charray[targetChar] & BIT_ONE) != 0){
+			//	*charray[targetChar] = ((*charray[targetChar] >> bitShift) & 0x01);
+			//}
+			if (newBit == 0){
+				*charray[targetChar] = (*charray[targetChar] & !BIT_ONE);
+				break;
+			}
+			*charray[targetChar] = (*charray[targetChar] | BIT_ONE);
 			break;
 		case 1:
+			if (newBit == 0){
+				*charray[targetChar] = (*charray[targetChar] & !BIT_TWO);
+				break;
+			}
+			*charray[targetChar] = (*charray[targetChar] | BIT_TWO);
+			break;
+		case 2:
+			if (newBit == 0){
+				*charray[targetChar] = (*charray[targetChar] & !BIT_THREE);
+				break;
+			}
+			*charray[targetChar] = (*charray[targetChar] | BIT_THREE);
 			break;
 		case 3:
+			if (newBit == 0){
+				*charray[targetChar] = (*charray[targetChar] & !BIT_FOUR);
+				break;
+			}
+			*charray[targetChar] = (*charray[targetChar] | BIT_FOUR);
+			break;
+		case 4:
+			if (newBit == 0){
+				*charray[targetChar] = (*charray[targetChar] & !BIT_FIVE);
+				break;
+			}
+			*charray[targetChar] = (*charray[targetChar] | BIT_FIVE);
+			break;
+		case 5:
+			if (newBit == 0){
+				*charray[targetChar] = (*charray[targetChar] & !BIT_SIX);
+				break;
+			}
+			*charray[targetChar] = (*charray[targetChar] | BIT_SIX);
+			break;
+		case 6:
+			if (newBit == 0){
+				*charray[targetChar] = (*charray[targetChar] & !BIT_SEVEN);
+				break;
+			}
+			*charray[targetChar] = (*charray[targetChar] | BIT_SEVEN);
+			break;
+		case 7:
+			if (newBit == 0){
+				*charray[targetChar] = (*charray[targetChar] & !BIT_EIGHT);
+				break;
+			}
+			*charray[targetChar] = (*charray[targetChar] | BIT_EIGHT);
+			break;
+			
 
 	}
 	
